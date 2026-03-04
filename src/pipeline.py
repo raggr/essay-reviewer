@@ -17,7 +17,7 @@ try:
         get_genre_config, get_writer_level_config, DEFAULT_GENRE, SUPPORTED_GENRES,
         DYNAMIC_CONFIDENCE_THRESHOLD, REVIEW_MODE_STANDARD, REVIEW_MODE_DYNAMIC, REVIEW_MODE_HYBRID,
     )
-    from .prompts.shared import MASTER_SYSTEM_PROMPT, CALIBRATION_BLOCKS, MIXED_GENRE_SYNTHESIS_BLOCK
+    from .prompts.shared import MASTER_SYSTEM_PROMPT, CALIBRATION_BLOCKS, MIXED_GENRE_SYNTHESIS_BLOCK, get_length_calibration_block
     from .genre_detection import should_run_mixed_genre  # re-export for server/orchestrator
     from .dynamic_criteria import (
         CRITERIA_GENERATION_SYSTEM,
@@ -33,7 +33,7 @@ except ImportError:
         get_genre_config, get_writer_level_config, DEFAULT_GENRE, SUPPORTED_GENRES,
         DYNAMIC_CONFIDENCE_THRESHOLD, REVIEW_MODE_STANDARD, REVIEW_MODE_DYNAMIC, REVIEW_MODE_HYBRID,
     )
-    from prompts.shared import MASTER_SYSTEM_PROMPT, CALIBRATION_BLOCKS, MIXED_GENRE_SYNTHESIS_BLOCK
+    from prompts.shared import MASTER_SYSTEM_PROMPT, CALIBRATION_BLOCKS, MIXED_GENRE_SYNTHESIS_BLOCK, get_length_calibration_block
     from genre_detection import should_run_mixed_genre  # re-export for server/orchestrator
     from dynamic_criteria import (
         CRITERIA_GENERATION_SYSTEM,
@@ -185,6 +185,7 @@ def build_calibrated_synthesis_prompt(
     primary_genre=None,
     secondary_genre=None,
     focus=None,
+    word_count=None,
 ):
     """
     Build a synthesis prompt with writer-level calibration and optional
@@ -195,7 +196,7 @@ def build_calibrated_synthesis_prompt(
     instructions) for maximum impact on synthesis behaviour.
 
     Injection order before CRITICAL RULES:
-        calibration → mixed-genre → focus → CRITICAL RULES
+        calibration → length calibration → mixed-genre → focus → CRITICAL RULES
 
     Args:
         synthesis_prompt: The genre's SYNTHESIS_PROMPT template string
@@ -204,12 +205,18 @@ def build_calibrated_synthesis_prompt(
         primary_genre: Primary genre label (required if is_mixed_genre)
         secondary_genre: Secondary genre label (required if is_mixed_genre)
         focus: Optional comma-separated focus areas from the author
+        word_count: Optional essay word count for length-adaptive calibration
 
     Returns:
         Modified synthesis prompt template string (still has {placeholders})
     """
     # Get the detailed calibration block from shared.py
     calibration = CALIBRATION_BLOCKS.get(writer_level, CALIBRATION_BLOCKS["accomplished"]).strip()
+
+    # Build length calibration block if word count available
+    length_block = ""
+    if word_count is not None:
+        length_block = get_length_calibration_block(word_count)
 
     # Build mixed-genre preamble if needed
     mixed_block = ""
@@ -219,11 +226,13 @@ def build_calibrated_synthesis_prompt(
             secondary_genre=secondary_genre,
         ).strip()
 
-    # Combine calibration + mixed-genre into injection block
+    # Combine calibration + length + mixed-genre into injection block
+    parts = [calibration]
+    if length_block:
+        parts.append(length_block)
     if mixed_block:
-        injection = f"{calibration}\n\n{mixed_block}"
-    else:
-        injection = calibration
+        parts.append(mixed_block)
+    injection = "\n\n".join(parts)
 
     # Add focus block if specified
     if focus and focus.strip():
@@ -346,6 +355,7 @@ def build_hybrid_synthesis_prompt(
     writer_level,
     static_genre,
     focus=None,
+    word_count=None,
 ):
     """
     Build a synthesis prompt for hybrid mode — static genre + dynamic criteria.
@@ -359,6 +369,7 @@ def build_hybrid_synthesis_prompt(
         writer_level: "elite", "accomplished", or "developing"
         static_genre: The static genre used for the genre dimension set
         focus: Optional comma-separated focus areas
+        word_count: Optional essay word count for length-adaptive calibration
 
     Returns:
         Modified synthesis prompt template string
@@ -366,7 +377,14 @@ def build_hybrid_synthesis_prompt(
     calibration = CALIBRATION_BLOCKS.get(writer_level, CALIBRATION_BLOCKS["accomplished"]).strip()
     hybrid_block = HYBRID_SYNTHESIS_BLOCK.format(genre=static_genre).strip()
 
-    injection = f"{calibration}\n\n{hybrid_block}"
+    parts = [calibration]
+    length_block = ""
+    if word_count is not None:
+        length_block = get_length_calibration_block(word_count)
+    if length_block:
+        parts.append(length_block)
+    parts.append(hybrid_block)
+    injection = "\n\n".join(parts)
 
     if focus and focus.strip():
         focus_block = (
@@ -391,6 +409,7 @@ def build_hybrid_synthesis_prompt(
 def build_dynamic_synthesis_with_calibration(
     writer_level,
     focus=None,
+    word_count=None,
 ):
     """
     Build a calibrated dynamic synthesis prompt (no static genre involved).
@@ -401,7 +420,15 @@ def build_dynamic_synthesis_with_calibration(
         Modified DYNAMIC_SYNTHESIS_PROMPT template string
     """
     calibration = CALIBRATION_BLOCKS.get(writer_level, CALIBRATION_BLOCKS["accomplished"]).strip()
-    injection = calibration
+    parts = [calibration]
+
+    length_block = ""
+    if word_count is not None:
+        length_block = get_length_calibration_block(word_count)
+    if length_block:
+        parts.append(length_block)
+
+    injection = "\n\n".join(parts)
 
     if focus and focus.strip():
         focus_block = (

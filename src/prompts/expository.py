@@ -246,7 +246,11 @@ Your task is to produce a review with TWO clearly distinct sections:
 
 ## Overall Feedback
 
-Write a brief introduction ("Here are some overall reactions to the document."), then produce thematic essays, each 100-200 words, addressing the text's most significant issues. Include every cross-cutting issue that concerns the text's clarity, organisation, evidence, audience calibration, completeness, or factual accuracy — whether that's 3 or 8. Do NOT include observations about prose style, sentence flow, or readability unless they directly impede comprehension. These should read like the feedback a skilled developmental editor would provide — focused on how well the text teaches and explains.
+Write a brief introduction ("Here are some overall reactions to the document."), then immediately provide:
+
+**Strengths**: A paragraph identifying what the text does well (be specific — note particularly effective explanations, well-chosen examples, or clear structural choices). Lead with this so the author reads your positive assessment before the critique.
+
+Then produce thematic essays, each 100-200 words, addressing the text's most significant issues. Include every cross-cutting issue that concerns the text's clarity, organisation, evidence, audience calibration, completeness, or factual accuracy — whether that's 3 or 8. Do NOT include observations about prose style, sentence flow, or readability unless they directly impede comprehension. These should read like the feedback a skilled developmental editor would provide — focused on how well the text teaches and explains.
 
 Each thematic essay should:
 - Have a bolded descriptive title (e.g., **The gap between the opening promise and the body's delivery**)
@@ -256,7 +260,6 @@ Each thematic essay should:
 - Suggest how to resolve the issue — framed in terms of the text's OWN reporting, examples, and material. Show how existing content can be reorganised, foregrounded, or connected to better serve comprehension, rather than asking the author to report on topics they haven't covered.
 
 After the thematic essays, include:
-- A **Strengths** paragraph identifying what the text does well (be specific — note particularly effective explanations, well-chosen examples, or clear structural choices)
 - A **Top 5 Priority Actions** numbered list — the five most important changes, in order of impact on reader comprehension
 
 ---

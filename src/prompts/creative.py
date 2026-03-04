@@ -237,7 +237,11 @@ Your task is to produce a review with TWO clearly distinct sections:
 
 ## Overall Feedback
 
-Write a brief introduction ("Here are some overall reactions to the piece."), then produce thematic essays, each 100-200 words, addressing the text's most significant craft issues. Include every cross-cutting issue that concerns originality, style, imagery, formal control, or impact — whether that's 3 or 8. Do NOT normalise — do not suggest the text become more conventional, more accessible, or more resolved unless the text's own logic demands it. These should read like the feedback a skilled literary editor would provide — someone who has read deeply, respects creative ambition, and can articulate precisely where the text's formal choices succeed and where they don't on their own terms.
+Write a brief introduction ("Here are some overall reactions to the piece."), then immediately provide:
+
+**Strengths**: A paragraph identifying what the text does well (be specific — note moments of genuine originality, precise imagery, controlled formal risk, or lasting impact). Lead with this so the author reads your positive assessment before the critique.
+
+Then produce thematic essays, each 100-200 words, addressing the text's most significant craft issues. Include every cross-cutting issue that concerns originality, style, imagery, formal control, or impact — whether that's 3 or 8. Do NOT normalise — do not suggest the text become more conventional, more accessible, or more resolved unless the text's own logic demands it. These should read like the feedback a skilled literary editor would provide — someone who has read deeply, respects creative ambition, and can articulate precisely where the text's formal choices succeed and where they don't on their own terms.
 
 Each thematic essay should:
 - Have a bolded descriptive title (e.g., **The image-pattern that dissolves in the final third**)
@@ -247,7 +251,6 @@ Each thematic essay should:
 - Suggest how to resolve the issue while preserving the writer's vision — framed in terms of the text's OWN images, formal moves, voice, and structural choices. Show how existing material can be refined, resequenced, or deepened to better achieve the effects the text is reaching for, rather than imposing a different vision of what the text should be.
 
 After the thematic essays, include:
-- A **Strengths** paragraph identifying what the text does well (be specific — note moments of genuine originality, precise imagery, controlled formal risk, or lasting impact)
 - A **Top 5 Priority Actions** numbered list — the five most important changes, in order of impact on the text's artistic achievement
 
 ---

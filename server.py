@@ -327,18 +327,22 @@ def run_full_review(api_key, essay_text, model, dimensions, genre_override=None,
             synthesis_system_message = load_synthesis_system_message(genre_used)
 
     # ── Build synthesis prompt ────────────────────────────────
+    word_count = len(essay_text.split())
+
     if is_hybrid:
         calibrated_synthesis = build_hybrid_synthesis_prompt(
             DYNAMIC_SYNTHESIS_PROMPT,
             sophistication_level,
             static_genre=genre_used,
             focus=focus,
+            word_count=word_count,
         )
         synthesis_system_message = DYNAMIC_SYNTHESIS_SYSTEM_MESSAGE
     elif use_dynamic and not use_static:
         calibrated_synthesis = build_dynamic_synthesis_with_calibration(
             sophistication_level,
             focus=focus,
+            word_count=word_count,
         )
         synthesis_system_message = DYNAMIC_SYNTHESIS_SYSTEM_MESSAGE
     else:
@@ -349,6 +353,7 @@ def run_full_review(api_key, essay_text, model, dimensions, genre_override=None,
             primary_genre=genre_used,
             secondary_genre=secondary_genre,
             focus=focus,
+            word_count=word_count,
         )
 
     # ── Phase 1: Parallel dimension reviews ───────────────────
@@ -426,7 +431,6 @@ def run_full_review(api_key, essay_text, model, dimensions, genre_override=None,
 
     # ── Build final report ────────────────────────────────────
     timestamp = datetime.now().strftime('%d/%m/%Y, %H:%M:%S')
-    word_count = len(essay_text.split())
     dim_names = ', '.join(r['dimension'] for r in results)
     register = genre_metadata.get('register', 'unknown')
 

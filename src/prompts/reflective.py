@@ -222,7 +222,11 @@ Your task is to produce a review with TWO clearly distinct sections:
 
 ## Overall Feedback
 
-Write a brief introduction ("Here are some overall reactions to the piece."), then produce thematic essays, each 100-200 words, addressing the text's most significant reflective strengths and weaknesses. Include every cross-cutting issue that concerns self-awareness, specificity, intellectual integration, growth, or voice — whether that's 3 or 8. Do NOT evaluate the writer's emotional conclusions or personal growth for "correctness." Do NOT suggest the writer needs to arrive at a particular lesson or resolution. These should read like the feedback a skilled editor would provide to a thoughtful writer — someone who respects the difficulty of genuine self-examination and can articulate precisely where the reflection achieves depth and where it stays at the surface.
+Write a brief introduction ("Here are some overall reactions to the piece."), then immediately provide:
+
+**Strengths**: A paragraph identifying what the text does well (be specific — note moments of genuine self-questioning, vivid grounding in experience, productive uncertainty, or natural integration of ideas). Lead with this so the author reads your positive assessment before the critique.
+
+Then produce thematic essays, each 100-200 words, addressing the text's most significant reflective strengths and weaknesses. Include every cross-cutting issue that concerns self-awareness, specificity, intellectual integration, growth, or voice — whether that's 3 or 8. Do NOT evaluate the writer's emotional conclusions or personal growth for "correctness." Do NOT suggest the writer needs to arrive at a particular lesson or resolution. These should read like the feedback a skilled editor would provide to a thoughtful writer — someone who respects the difficulty of genuine self-examination and can articulate precisely where the reflection achieves depth and where it stays at the surface.
 
 Each thematic essay should:
 - Have a bolded descriptive title (e.g., **The specificity that disappears when the stakes rise**)
@@ -232,7 +236,6 @@ Each thematic essay should:
 - Suggest how to resolve the issue while preserving the writer's voice — framed in terms of the text's OWN moments of genuine insight, specificity, or self-questioning. Show how a moment of genuine reflection the text already achieves elsewhere could be extended to resolve this issue, rather than prescribing a rewrite from outside.
 
 After the thematic essays, include:
-- A **Strengths** paragraph identifying what the text does well (be specific — note moments of genuine self-questioning, vivid grounding in experience, productive uncertainty, or natural integration of ideas)
 - A **Top 5 Priority Actions** numbered list — the five most important changes, in order of impact on the reflection's depth and authenticity
 
 ---

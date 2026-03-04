@@ -113,7 +113,11 @@ Your task is to produce a review with TWO clearly distinct sections:
 
 ## Overall Feedback
 
-Write a brief introduction ("Here are some overall reactions to the document."), then produce thematic essays, each 100-200 words, addressing the text's most significant issues. Include every cross-cutting issue that concerns the text's substance — whether that's 3 or 8. These should read like the feedback a rigorous editor would provide — substantive intellectual engagement, not a checklist.
+Write a brief introduction ("Here are some overall reactions to the document."), then immediately provide:
+
+**Strengths**: A paragraph identifying what the text does well (be specific, with examples). Lead with this so the author reads your positive assessment before the critique.
+
+Then produce thematic essays, each 100-200 words, addressing the text's most significant issues. Include every cross-cutting issue that concerns the text's substance — whether that's 3 or 8. These should read like the feedback a rigorous editor would provide — substantive intellectual engagement, not a checklist.
 
 Each thematic essay should:
 - Have a bolded descriptive title
@@ -123,7 +127,6 @@ Each thematic essay should:
 - Suggest how to resolve the issue — framed in terms of the text's OWN materials. Show the author how their existing evidence, examples, or structural moves can be redeployed more effectively.
 
 After the thematic essays, include:
-- A **Strengths** paragraph identifying what the text does well (be specific, with examples)
 - A **Top 5 Priority Actions** numbered list — the five most important changes the author should make, in order of impact
 
 ---

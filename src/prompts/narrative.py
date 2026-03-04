@@ -215,7 +215,11 @@ Your task is to produce a review with TWO clearly distinct sections:
 
 ## Overall Feedback
 
-Write a brief introduction ("Here are some overall reactions to the document."), then produce thematic essays, each 100-200 words, addressing the text's most significant craft issues. Include every cross-cutting issue that concerns voice, structure, characterisation, detail, or resonance — whether that's 3 or 8. Do NOT include generic workshop advice. These should read like the feedback a skilled literary editor would provide — someone who has read deeply in the genre, respects the writer's ambitions, and can articulate precisely where the text succeeds and where it falls short on its own terms.
+Write a brief introduction ("Here are some overall reactions to the document."), then immediately provide:
+
+**Strengths**: A paragraph identifying what the text does well (be specific — note moments of genuine power, distinctive voice, structural intelligence, or vivid specificity). Lead with this so the author reads your positive assessment before the critique.
+
+Then produce thematic essays, each 100-200 words, addressing the text's most significant craft issues. Include every cross-cutting issue that concerns voice, structure, characterisation, detail, or resonance — whether that's 3 or 8. Do NOT include generic workshop advice. These should read like the feedback a skilled literary editor would provide — someone who has read deeply in the genre, respects the writer's ambitions, and can articulate precisely where the text succeeds and where it falls short on its own terms.
 
 Each thematic essay should:
 - Have a bolded descriptive title (e.g., **The voice that fractures in the middle third**)
@@ -225,7 +229,6 @@ Each thematic essay should:
 - Suggest how to resolve the issue while preserving the writer's intent — framed in terms of the text's OWN scenes, images, voice, and structural choices. Show how existing material can be refined, resequenced, or deepened to better achieve the effects the text is reaching for, rather than imposing a different vision of what the text should be.
 
 After the thematic essays, include:
-- A **Strengths** paragraph identifying what the text does well (be specific — note moments of genuine power, distinctive voice, structural intelligence, or vivid specificity)
 - A **Top 5 Priority Actions** numbered list — the five most important changes, in order of impact on the reader's experience
 
 ---

@@ -211,7 +211,11 @@ Your task is to produce a review with TWO clearly distinct sections:
 
 ## Overall Feedback
 
-Write a brief introduction ("Here are some overall reactions to the document."), then produce thematic essays, each 100-200 words, addressing the analysis's most significant issues. Include every cross-cutting issue that concerns the analysis's interpretive depth, evidence use, framework, or accuracy — whether that's 3 or 8. Do NOT include observations about prose style, sentence flow, or readability. These should read like the feedback a rigorous literary editor would provide — substantive intellectual engagement, not a checklist.
+Write a brief introduction ("Here are some overall reactions to the document."), then immediately provide:
+
+**Strengths**: A paragraph identifying what the analysis does well (be specific, with examples — note moments of genuine interpretive depth, surprising evidence choices, or effective framework application). Lead with this so the author reads your positive assessment before the critique.
+
+Then produce thematic essays, each 100-200 words, addressing the analysis's most significant issues. Include every cross-cutting issue that concerns the analysis's interpretive depth, evidence use, framework, or accuracy — whether that's 3 or 8. Do NOT include observations about prose style, sentence flow, or readability. These should read like the feedback a rigorous literary editor would provide — substantive intellectual engagement, not a checklist.
 
 Each thematic essay should:
 - Have a bolded descriptive title (e.g., **The tension between framework and close reading**)
@@ -223,7 +227,6 @@ Each thematic essay should:
 These thematic essays are the MOST VALUABLE part of the review. They help the author see their analysis from outside and identify blind spots invisible from within.
 
 After the thematic essays, include:
-- A **Strengths** paragraph identifying what the analysis does well (be specific, with examples — note moments of genuine interpretive depth, surprising evidence choices, or effective framework application)
 - A **Top 5 Priority Actions** numbered list — the five most important changes the author should make, in order of impact
 
 ---

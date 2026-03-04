@@ -263,6 +263,45 @@ CALIBRATION_BLOCKS = {
 }
 
 
+# ── v0.9.2: Length-adaptive comment calibration ───────────────
+# Injected into synthesis prompts based on essay word count.
+# Prevents shorter essays from receiving disproportionately many comments.
+
+LENGTH_CALIBRATION_BLOCK_SHORT = """
+ESSAY LENGTH CALIBRATION — SHORT TEXT ({word_count} words):
+
+This is a short essay. A shorter text has fewer passages, fewer claims, and fewer structural moves — which means fewer genuine issues to flag. Do NOT compensate for the essay's brevity by lowering your quality threshold or flagging issues you would overlook in a longer piece. The same substance bar applies regardless of length.
+
+Concretely:
+- OVERALL FEEDBACK: 2-4 thematic essays are typical for a text of this length. Do not stretch to fill — if only 2 cross-cutting issues are genuinely significant, write 2.
+- DETAILED COMMENTS: 2-5 comments are typical. A short essay with 8+ detailed comments almost certainly includes observations that fail the substance threshold.
+- TOP PRIORITY ACTIONS: 3-5 is appropriate. Not every short essay needs 5 — if only 3 actions would materially improve the text, list 3.
+
+The goal is a review that feels proportionate and useful, not one that overwhelms a brief text with more critique than it has material to absorb.
+"""
+
+LENGTH_CALIBRATION_BLOCK_MEDIUM = """
+ESSAY LENGTH CALIBRATION — MEDIUM TEXT ({word_count} words):
+
+Apply the standard substance threshold. Include every observation that meets the bar, whether that is 4 or 10. Do not pad — if the text is clean, fewer comments is a valid outcome.
+"""
+
+def get_length_calibration_block(word_count: int) -> str:
+    """
+    Return a length-appropriate calibration block for synthesis.
+
+    Short: < 2000 words — reduced comment expectations
+    Medium: 2000-4000 words — standard (light reminder)
+    Long: > 4000 words — no additional block needed (existing prompts are calibrated for this)
+    """
+    if word_count < 2000:
+        return LENGTH_CALIBRATION_BLOCK_SHORT.format(word_count=word_count).strip()
+    elif word_count <= 4000:
+        return LENGTH_CALIBRATION_BLOCK_MEDIUM.format(word_count=word_count).strip()
+    else:
+        return ""
+
+
 # ── v0.8.0: Mixed genre synthesis preamble ───────────────────────
 # Injected when synthesis receives dimensions from two genres.
 
