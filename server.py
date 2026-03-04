@@ -599,6 +599,7 @@ def main():
 
     port = int(os.environ.get('PORT', args.port or 5000))
     host = '0.0.0.0'  # bind to all interfaces for cloud deployment
+    api_key = get_api_key()
     ui_dir = Path(__file__).parent / 'ui'
     if not ui_dir.exists() or not (ui_dir / 'index.html').exists():
         print("Error: ui/index.html not found. Make sure the ui/ folder exists.")
